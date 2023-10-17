@@ -1,0 +1,29 @@
+body {
+  font-family:"Quicksand";
+  font-weight: 300;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.cuterContent {
+  display: flex;
+  width: 100%;
+}
+
+#capybaras {
+  width: 50%;
+}
+
+tr {
+  display: block; float: left;
+}
+th, td {
+  display: block;
+}
+
+
