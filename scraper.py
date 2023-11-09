@@ -68,6 +68,7 @@ Salvador = ["Salvador", "https://www.goethe.de/ins/br/de/sta/sal/ueb/kar.html"]
 PortoAlegre = ["Porto Alegre", "https://www.goethe.de/ins/br/de/sta/poa/ueb/kar.html"]
 SaoPaulo = ["Sao Paulo", "https://www.goethe.de/ins/br/de/sta/sap/ueb/kar.html"]
 Curitiba = ["Curitiba", "https://www.goethe.de/ins/br/de/sta/cur/ueb/kar.html"]
+Südafrika = ["Südafrika", "https://www.goethe.de/ins/za/de/ueb/kar.html"]
 #Brasilien,
 
 
@@ -80,7 +81,7 @@ Länder = [Warschau, Krakau, Slowakei, SanFran, Boston, LosAngeles,
           Elfenbeinküste, Estland, Griechenland, Kenia, Kroatien,
           Lettland, Litauen, Peru, Slowenien, Taipei, Ungarn,
           Deutschland, Bangalore, Chennai, Kolkata, Mumbai, NewDelhi, Pune,
-          Rio, Salvador, PortoAlegre, SaoPaulo, Curitiba]
+          Rio, Salvador, PortoAlegre, SaoPaulo, Curitiba, Südafrika]
 header = []
 jobs = []
 links = []
