@@ -21,9 +21,12 @@ function generateTableHead(table, data) {
 }
 
 function hyperlinker() {
-  let tr = document.body.getElementsByTagName("tr")[2];
-  let td = tr.getElementsByTagName("td");
-  for(item in td)
-    item.style.color = "red"
+  const table = document.getElementById("tbl-data");
+  const row = table.rows[2];
+  const childrenArray = Array.from(row.children);
 
+  childrenArray.forEach(child => {
+    child.innerHTML = "<a href='" + child.innerHTML + "'>"+child.innerHTML + "</a>"
+  });
 }
+

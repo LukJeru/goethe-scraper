@@ -7,12 +7,12 @@ import csv
 Warschau = ["Warschau","https://www.goethe.de/ins/pl/de/sta/war/ueb/kar.html"]
 Krakau = ["Krakau", "https://www.goethe.de/ins/pl/de/sta/kra/ueb/kar.html"]
 Slowakei = ["Slowakei","https://www.goethe.de/ins/sk/de/ueb/kar.html"]
-SanFran= ["San Francisco","https://www.goethe.de/ins/us/en/sta/sfr/ueb/kar.html"]
-Boston = ["Boston", "https://www.goethe.de/ins/us/en/sta/bos/ueb/kar.html" ]
+SanFran= ["San Francisco","https://www.goethe.de/ins/us/de/sta/sfr/ueb/kar.html"]
+Boston = ["Boston", "https://www.goethe.de/ins/us/de/sta/bos/ueb/karriere-und-praktika.html" ]
 LosAngeles = ["Los Angeles", "https://www.goethe.de/ins/us/de/sta/los/ueb/kar.html"]
-Chicago = ["Chicago", "https://www.goethe.de/ins/us/en/sta/chi/ueb/kar.html"]
-NewYork = ["New York", "https://www.goethe.de/ins/us/en/sta/ney/uun/kar.html"]
-Washington = ["Washington", "https://www.goethe.de/ins/us/en/sta/wsh/ueb/kar.html"]
+Chicago = ["Chicago", "https://www.goethe.de/ins/us/de/sta/chi/ueb/kar.html"]
+NewYork = ["New York", "https://www.goethe.de/ins/us/de/sta/ney/uun/kar.html"]
+Washington = ["Washington", "https://www.goethe.de/ins/us/de/sta/wsh/ueb/kar.html"]
 Montreal = ["Montreal","https://www.goethe.de/ins/ca/de/sta/mon/ueb/kar.html"]
 Toronto = ["Toronto", "https://www.goethe.de/ins/ca/de/sta/tor/ueb/kar.html"]
 Ottawa = ["Ottawa", "https://www.goethe.de/ins/ca/de/sta/ott/ueb/kar.html"]
@@ -90,15 +90,16 @@ for Land in Länder:
     page = requests.get(Land[1])
     print(str(Länder.index(Land) )+ "/" + str(len(Länder) -1 ))
     soup = BeautifulSoup(page.content, "html.parser")
-    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all("div", class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)")
+    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all("div", class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)") +soup.find_all(class_="hdl Fs(22px) Lh(1.272)") +soup.find_all(class_="stretched-link")
 
     for job_element in job_elements:
-        link_element = job_element.find("a")
-        if link_element:
-            if "Praktikum" not in link_element.text and "Internship" not in link_element.text and "Grünes Diplom" not in link_element.text and "SCHULWÄRTS" not in link_element.text and "Kulturweit" not in link_element.text and "GRÜNES DIPLOM" not in link_element.text and "Lehrkräfte" not in link_element.text and "lehrkräfte" not in link_element.text and "Jugendfreiwilligendienst" not in link_element.text and "weltweit" not in link_element.text and "Initiativbewerbung" not in link_element.text and "Zurück zu" not in link_element.text and "Home" not in link_element.text and "thorsten" not in link_element.text and "Newsletter" not in link_element.text:
-                if link_element.text:
+        #link_element = job_element.find("a")
+        #if link_element:
+            if "Vielfalt, Neugierde und Offenheit" not in job_element.text and "Leider" not in job_element.text and "Folgen Sie uns" not in job_element.text and "Zurück zu" not in job_element.text and "Kontakt" not in job_element.text:
+            #if "Praktikum" not in link_element.text and "Internship" not in link_element.text and "Grünes Diplom" not in link_element.text and "SCHULWÄRTS" not in link_element.text and "Kulturweit" not in link_element.text and "GRÜNES DIPLOM" not in link_element.text and "Grünes Diplom" not in link_element.text and "Lehrkräfte" not in link_element.text and "lehrkräfte" not in link_element.text and "Jugendfreiwilligendienst" not in link_element.text and "weltweit" not in link_element.text and "Initiativbewerbung" not in link_element.text and "Zurück zu" not in link_element.text and "Home" not in link_element.text and "thorsten" not in link_element.text and "Newsletter" not in link_element.text:
+                if job_element.text: #job wieder mit link austauschen
                     header.append(Land[0])
-                    jobs.append(link_element.text)
+                    jobs.append(job_element.text) #job wieder mit link austauschen
                     links.append(Land[1])
                     sum +=1
 
