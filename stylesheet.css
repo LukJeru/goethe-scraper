@@ -19,11 +19,19 @@ header {
   width: 50%;
 }
 
+table{
+  width: 100%;
+}
+
 tr {
-  display: block; float: left;
+  display: block;
+  float: left;
 }
 th, td {
   display: block;
+  border: 1px solid black;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height:56px;
 }
-
-
