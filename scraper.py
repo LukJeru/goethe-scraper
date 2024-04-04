@@ -90,12 +90,12 @@ for Land in Länder:
     page = requests.get(Land[1])
     print(str(Länder.index(Land) )+ "/" + str(len(Länder) -1 ))
     soup = BeautifulSoup(page.content, "html.parser")
-    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all("div", class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)") +soup.find_all(class_="hdl Fs(22px) Lh(1.272)") +soup.find_all(class_="stretched-link")
+    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all("div", class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)") +soup.find_all(class_="stretched-link")
 
     for job_element in job_elements:
         #link_element = job_element.find("a")
         #if link_element:
-            if "Vielfalt, Neugierde und Offenheit" not in job_element.text and "Leider" not in job_element.text and "Folgen Sie uns" not in job_element.text and "Zurück zu" not in job_element.text and "Kontakt" not in job_element.text:
+            if "Vielfalt, Neugierde und Offenheit" not in job_element.text and "Leider" not in job_element.text and "Folgen Sie uns" not in job_element.text and "Zurück zu" not in job_element.text and "Kontakt" not in job_element.text and "Praktikum" not in job_element.text and "Internship" not in job_element.text and "Grünes Diplom" not in job_element.text and "SCHULWÄRTS" not in job_element.text and "Kulturweit" not in job_element.text and "GRÜNES DIPLOM" not in job_element.text and "Grünes Diplom" not in job_element.text and "Lehrkräfte" not in job_element.text and "lehrkräfte" not in job_element.text and "Jugendfreiwilligendienst" not in job_element.text and "weltweit" not in job_element.text and "Initiativbewerbung" not in job_element.text and "Zurück zu" not in job_element.text and "Home" not in job_element.text and "thorsten" not in job_element.text and "Newsletter" not in job_element.text and "Stellenangebote" not in job_element.text:
             #if "Praktikum" not in link_element.text and "Internship" not in link_element.text and "Grünes Diplom" not in link_element.text and "SCHULWÄRTS" not in link_element.text and "Kulturweit" not in link_element.text and "GRÜNES DIPLOM" not in link_element.text and "Grünes Diplom" not in link_element.text and "Lehrkräfte" not in link_element.text and "lehrkräfte" not in link_element.text and "Jugendfreiwilligendienst" not in link_element.text and "weltweit" not in link_element.text and "Initiativbewerbung" not in link_element.text and "Zurück zu" not in link_element.text and "Home" not in link_element.text and "thorsten" not in link_element.text and "Newsletter" not in link_element.text:
                 if job_element.text: #job wieder mit link austauschen
                     header.append(Land[0])
