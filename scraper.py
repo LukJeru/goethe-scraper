@@ -69,7 +69,19 @@ PortoAlegre = ["Porto Alegre", "https://www.goethe.de/ins/br/de/sta/poa/ueb/kar.
 SaoPaulo = ["Sao Paulo", "https://www.goethe.de/ins/br/de/sta/sap/ueb/kar.html"]
 Curitiba = ["Curitiba", "https://www.goethe.de/ins/br/de/sta/cur/ueb/kar.html"]
 Südafrika = ["Südafrika", "https://www.goethe.de/ins/za/de/ueb/kar.html"]
-#Brasilien,
+Zypern = ["Zypern", "https://www.goethe.de/ins/cy/de/ueb/kar.html"]
+Bosnien = ["Bosnien", "https://www.goethe.de/ins/ba/de/ueb/aus.html"]
+Bulgarien = ["Bulgarien", "https://www.goethe.de/ins/bg/de/ueb/kar.html"]
+Indonesien = ["Indonesien", "https://www.goethe.de/ins/id/de/ueb/kar.html"]
+Israel = ["Israel", "https://www.goethe.de/ins/il/de/ueb/kar.html"]
+Kamerun = ["Kamerun", "https://www.goethe.de/ins/cm/de/ueb/kar.html"]
+Jordanien = ["Jordanien", "https://www.goethe.de/ins/jo/de/ueb/kar.html"]
+Libanon = ["Libanon", "https://www.goethe.de/ins/lb/de/ueb/kar.html"]
+Mongolei = ["Mongolei", "https://www.goethe.de/ins/mn/de/ueb/kar.html"]
+Myanmar = ["Myanmar", "https://www.goethe.de/ins/mm/de/ueb/kar/stel.htmll"]
+Nordmazedonien = ["Nordmazedonien", "https://www.goethe.de/ins/mk/de/ueb/kar.html"]
+Rumänien = ["Rumänien", "https://www.goethe.de/ins/ro/de/ueb/kar/aktuelle-stellenangebote.html"]
+Thailand = ["Thailand", "https://www.goethe.de/ins/th/de/ueb/kar.html"]
 
 
 Länder = [Warschau, Krakau, Slowakei, SanFran, Boston, LosAngeles,
@@ -81,7 +93,10 @@ Länder = [Warschau, Krakau, Slowakei, SanFran, Boston, LosAngeles,
           Elfenbeinküste, Estland, Griechenland, Kenia, Kroatien,
           Lettland, Litauen, Peru, Slowenien, Taipei, Ungarn,
           Deutschland, Bangalore, Chennai, Kolkata, Mumbai, NewDelhi, Pune,
-          Rio, Salvador, PortoAlegre, SaoPaulo, Curitiba, Südafrika]
+          Rio, Salvador, PortoAlegre, SaoPaulo, Curitiba, Südafrika, Zypern, Bosnien,
+          Bulgarien, Indonesien, Israel, Kamerun, Jordanien, Libanon, Mongolei, Myanmar,
+          Nordmazedonien, Rumänien, Thailand
+          ]
 header = []
 jobs = []
 links = []
