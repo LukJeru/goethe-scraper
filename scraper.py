@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-
+#Portugal, Spanien,Frankreich, Belgien, Niederlande, Irland, UK, Dänemark, Norwegen, Italien, Schweden, Kroatien, Serbien, Polen, Griechenland, Ungarn, Slowakei, Finnland, Litauen, Letland, Estland
 
 Warschau = ["Warschau","https://www.goethe.de/ins/pl/de/sta/war/ueb/kar.html"]
 Krakau = ["Krakau", "https://www.goethe.de/ins/pl/de/sta/kra/ueb/kar.html"]
@@ -82,7 +82,9 @@ Myanmar = ["Myanmar", "https://www.goethe.de/ins/mm/de/ueb/kar/stel.htmll"]
 Nordmazedonien = ["Nordmazedonien", "https://www.goethe.de/ins/mk/de/ueb/kar.html"]
 Rumänien = ["Rumänien", "https://www.goethe.de/ins/ro/de/ueb/kar/aktuelle-stellenangebote.html"]
 Thailand = ["Thailand", "https://www.goethe.de/ins/th/de/ueb/kar.html"]
-
+Alexandria = ["Alexandria", "https://www.goethe.de/ins/eg/de/sta/alx/ueb/kar.html"]
+Kairo = ["Kairo", "https://www.goethe.de/ins/eg/de/sta/kai/ueb/kar.html"]
+Tunesien = ["Tunsien", "https://www.goethe.de/ins/tn/de/ueb/kar.html"]
 
 Länder = [Warschau, Krakau, Slowakei, SanFran, Boston, LosAngeles,
           NewYork, Washington, Montreal, Toronto, Ottawa, Mexiko, Chile,
@@ -95,7 +97,7 @@ Länder = [Warschau, Krakau, Slowakei, SanFran, Boston, LosAngeles,
           Deutschland, Bangalore, Chennai, Kolkata, Mumbai, NewDelhi, Pune,
           Rio, Salvador, PortoAlegre, SaoPaulo, Curitiba, Südafrika, Zypern, Bosnien,
           Bulgarien, Indonesien, Israel, Kamerun, Jordanien, Libanon, Mongolei, Myanmar,
-          Nordmazedonien, Rumänien, Thailand
+          Nordmazedonien, Rumänien, Thailand, Alexandria, Kairo, Tunesien
           ]
 header = []
 jobs = []
@@ -105,7 +107,7 @@ for Land in Länder:
     page = requests.get(Land[1])
     print(str(Länder.index(Land) )+ "/" + str(len(Länder) -1 ))
     soup = BeautifulSoup(page.content, "html.parser")
-    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all("div", class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)") +soup.find_all(class_="stretched-link")
+    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all(class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)") +soup.find_all(class_="stretched-link") +soup.find_all(class_="link-text ")
 
     for job_element in job_elements:
         #link_element = job_element.find("a")
