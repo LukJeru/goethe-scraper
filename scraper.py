@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-
+#Portugal, Spanien,Frankreich, Belgien, Niederlande, Irland, UK, Dänemark, Norwegen, Italien, Schweden, Kroatien, Serbien, Polen, Griechenland, Ungarn, Slowakei, Finnland, Litauen, Letland, Estland
 
 Warschau = ["Warschau","https://www.goethe.de/ins/pl/de/sta/war/ueb/kar.html"]
 Krakau = ["Krakau", "https://www.goethe.de/ins/pl/de/sta/kra/ueb/kar.html"]
@@ -69,8 +69,22 @@ PortoAlegre = ["Porto Alegre", "https://www.goethe.de/ins/br/de/sta/poa/ueb/kar.
 SaoPaulo = ["Sao Paulo", "https://www.goethe.de/ins/br/de/sta/sap/ueb/kar.html"]
 Curitiba = ["Curitiba", "https://www.goethe.de/ins/br/de/sta/cur/ueb/kar.html"]
 Südafrika = ["Südafrika", "https://www.goethe.de/ins/za/de/ueb/kar.html"]
-#Brasilien,
-
+Zypern = ["Zypern", "https://www.goethe.de/ins/cy/de/ueb/kar.html"]
+Bosnien = ["Bosnien", "https://www.goethe.de/ins/ba/de/ueb/aus.html"]
+Bulgarien = ["Bulgarien", "https://www.goethe.de/ins/bg/de/ueb/kar.html"]
+Indonesien = ["Indonesien", "https://www.goethe.de/ins/id/de/ueb/kar.html"]
+Israel = ["Israel", "https://www.goethe.de/ins/il/de/ueb/kar.html"]
+Kamerun = ["Kamerun", "https://www.goethe.de/ins/cm/de/ueb/kar.html"]
+Jordanien = ["Jordanien", "https://www.goethe.de/ins/jo/de/ueb/kar.html"]
+Libanon = ["Libanon", "https://www.goethe.de/ins/lb/de/ueb/kar.html"]
+Mongolei = ["Mongolei", "https://www.goethe.de/ins/mn/de/ueb/kar.html"]
+Myanmar = ["Myanmar", "https://www.goethe.de/ins/mm/de/ueb/kar/stel.htmll"]
+Nordmazedonien = ["Nordmazedonien", "https://www.goethe.de/ins/mk/de/ueb/kar.html"]
+Rumänien = ["Rumänien", "https://www.goethe.de/ins/ro/de/ueb/kar/aktuelle-stellenangebote.html"]
+Thailand = ["Thailand", "https://www.goethe.de/ins/th/de/ueb/kar.html"]
+Alexandria = ["Alexandria", "https://www.goethe.de/ins/eg/de/sta/alx/ueb/kar.html"]
+Kairo = ["Kairo", "https://www.goethe.de/ins/eg/de/sta/kai/ueb/kar.html"]
+Tunesien = ["Tunsien", "https://www.goethe.de/ins/tn/de/ueb/kar.html"]
 
 Länder = [Warschau, Krakau, Slowakei, SanFran, Boston, LosAngeles,
           NewYork, Washington, Montreal, Toronto, Ottawa, Mexiko, Chile,
@@ -81,7 +95,10 @@ Länder = [Warschau, Krakau, Slowakei, SanFran, Boston, LosAngeles,
           Elfenbeinküste, Estland, Griechenland, Kenia, Kroatien,
           Lettland, Litauen, Peru, Slowenien, Taipei, Ungarn,
           Deutschland, Bangalore, Chennai, Kolkata, Mumbai, NewDelhi, Pune,
-          Rio, Salvador, PortoAlegre, SaoPaulo, Curitiba, Südafrika]
+          Rio, Salvador, PortoAlegre, SaoPaulo, Curitiba, Südafrika, Zypern, Bosnien,
+          Bulgarien, Indonesien, Israel, Kamerun, Jordanien, Libanon, Mongolei, Myanmar,
+          Nordmazedonien, Rumänien, Thailand, Alexandria, Kairo, Tunesien
+          ]
 header = []
 jobs = []
 links = []
@@ -90,7 +107,7 @@ for Land in Länder:
     page = requests.get(Land[1])
     print(str(Länder.index(Land) )+ "/" + str(len(Länder) -1 ))
     soup = BeautifulSoup(page.content, "html.parser")
-    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all("div", class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)") +soup.find_all(class_="stretched-link")
+    job_elements = soup.find_all("h3") + soup.find_all(class_="w(719px) m-lr-a link-c Mt(40px)") + soup.find_all(class_="containerMRSORS") + soup.find_all("div", class_="dossier-infotext w(719px) m-lr-a Mb(50px)") +soup.find_all(class_="stretched-link") +soup.find_all(class_="link-text ")
 
     for job_element in job_elements:
         #link_element = job_element.find("a")
